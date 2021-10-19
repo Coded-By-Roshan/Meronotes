@@ -1,0 +1,85 @@
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #20B2AA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.login-form {
+    padding-top: 25px;
+    text-align: center;
+    background: cadetblue;
+    border: 2px solid oldlace;
+    /* padding: 25px; */
+    min-height: 500px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-bottom: 2px solid green;
+}
+
+.login-form form input {
+    margin: 20px;
+    padding: 15px;
+    min-width: 300px;
+    outline: none;
+    font-size: 17px;
+}
+
+.login-other {
+    margin: 15px 0;
+    text-align: center;
+    align-items: center;
+}
+
+.login-btn {
+    padding: 15px;
+    font-size: 17px;
+    outline: none;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: cyan;
+    margin: 10px;
+}
+
+.login-other img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.gbtn{
+    padding: 6px;
+background: white;
+    margin-top: 20px;
+object-fit: contain;
+display: block;
+color: black;
+width: 179px;
+margin: auto;
+border: 2px solid lightcyan;
+}
+
+@media only screen and (max-width: 450px) {
+    .login-form {
+        padding: 0;
+        margin: 0;
+    }
+
+    .login-form form input {
+        min-width: 50px;
+    }
+}

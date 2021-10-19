@@ -1,0 +1,35 @@
+{% extends 'Home.html' %}
+{% load static %}
+
+   
+   {% block body %}
+   <style>
+       .search-container{
+           min-height: 100vh;
+          
+           text-align: center;
+       }
+       .results{
+           display: flex;
+           flex-wrap: wrap;
+       }
+   </style>
+   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+   <link rel="stylesheet" href="{% static 'css/notes.css' %}">
+   <div class="search-container">
+       <h1>You Searched for:</h1>
+       <div class="results">
+           {% for search in search_results %}
+           <div class="box">
+            <div class="info">
+                <h2>{{search.title}}</h2>
+                <img class="file-img" src="{% static 'images/Folder-icon.png' %}" alt="">
+            </div>
+            <div class="action">
+                <a href="{% url 'detail' search.pk %}" class="download">View More</a>
+            </div>
+        </div>
+           {% endfor %}
+       </div>
+   </div>
+   {% endblock body %}

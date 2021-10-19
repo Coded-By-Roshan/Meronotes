@@ -1,0 +1,34 @@
+{% extends 'Home.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="login-container">
+
+    <div class="login-form">
+        <h1>Login Here</h1>
+        <form action="{% url 'signin' %}" method="POST"> {% csrf_token %}
+            <input type="text" placeholder="Username" name="username">
+            <input type="password" placeholder="password" name="password">
+            <a href=""><small>Forget Password?</small></a>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="login-other">
+            <h4>Or</h4>
+            
+                <a class="gbtn" href='{% provider_login_url "google" %}'>
+           
+            Continue with Google
+            
+            </a>
+        </div>
+    </div>
+   
+</div>
+{% endblock body %}

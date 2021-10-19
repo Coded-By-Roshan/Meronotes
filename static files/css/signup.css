@@ -1,0 +1,32 @@
+.sign-up{
+    background: #20B2AA;
+    min-height: 100vh;
+align-items: center;
+justify-content: center;
+text-align: center;
+display: flex;
+}
+.container{
+    padding: 50px;
+    border: 2px solid black;
+}
+  .controls ul{
+    display: none;
+}
+form input{
+    margin: 20px;
+    padding: 15px;
+    min-width: 300px;
+    outline: none;
+    font-size: 17px;
+}
+.login-btn{
+    padding: 15px;
+    font-size: 17px;
+    outline: none;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: cyan;
+    margin: 10px;
+}

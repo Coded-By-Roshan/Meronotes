@@ -1,0 +1,26 @@
+{% extends 'Home.html' %}
+{% load static %}
+
+   
+   {% block body %}
+
+   <link rel="stylesheet" href="{% static 'css/details.css' %}">
+   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <div class="detail-container">
+        {% for note in notes %}
+        <div class="note-datiails">
+            <div class="note-title">
+                <h1>{{note.title}}</h1>
+            </div>
+            <div class="note-image">
+                <img class="file-img" src="{% static 'images/Folder-icon.png' %}" alt="">
+            </div>
+            <div class="note-btns">
+                <a href="{{note.file.url}}" class="download" download>Download</a>
+            </div>
+        </div>
+      
+        {% endfor %}
+    </div>
+
+  {% endblock %}

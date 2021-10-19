@@ -1,0 +1,15 @@
+{% extends 'Home.html' %}
+{% load static %}
+
+   
+{% block body %}
+<<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/addnote.css' %}">
+<div class="add-note-page">
+    <form action="{% url 'add_notes' %}" method="POST" class="note-form"  name="forum" enctype="multipart/form-data"> {% csrf_token %}
+      {{forms}}
+      <button type="submit" class="login-btn">Add Note</button>
+    </form>
+</div>
+
+{% endblock body %}

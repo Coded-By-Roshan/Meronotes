@@ -1,0 +1,28 @@
+{% extends 'Home.html' %}
+{% load static %}
+
+   
+   {% block body %}
+   <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <div class="contact">
+        <div class="contact-heading">
+            <h1>Contact Us</h1>
+        </div>
+            <div class="contact-form">
+                <form action="{% url 'manageContact' %}" method="POST">{% csrf_token %}
+                        <div class="name">
+                        <input type="text" name="first_name" placeholder="First Name">
+                        <input type="text" name="last_name" placeholder="Last Name">
+
+                    </div>
+                    <input type="email" name="email" id="" placeholder="Yourname@mail.com">
+                    <textarea name="message" rows="10" placeholder="Message..."></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+        
+        </div>
+    </div>
+    {% endblock body %}
+    {% block footer %}
+    {% endblock footer %}

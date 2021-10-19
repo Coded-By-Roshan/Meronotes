@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/website-logo.png' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    {% if title %}
+    <title>MeroNotes | {{title}}</title>
+    {% else %}
+    <title>MeroNotes</title>
+    {% endif %}
+</head>
+
+<body>
+    {% block nav %}
+    <div class="nav">
+        <img src="{% static 'images/website-logo.png' %}" class="logo">
+  
+
+        <div class="menus">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'note' %}">Notes</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'add_notes' %}">Add Notes</a></li>
+                <li><a href="{% url 'logout' %}" class="auth">Logout</a></li>
+                {% else %}
+
+                <li><a href="{% url 'login' %}" class="auth">Login</a></li>
+                <li><a href="{% url 'signup' %}" class="auth">SignUp</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="humb">
+            <span class="n"></span>
+            <span class="n"></span>
+            <span class="n"></span>
+        </div>
+    </div>
+    {% endblock nav %}
+    {% block body %}
+    <div class="home">
+        <div class="first">
+            <h1 class="slogan"> <span class="text">Create</span> And <span class="text">Manage</span> All Your Notes In
+                One Place</h1>
+
+        </div>
+        <div class="second">
+            <form action="{% url 'search' %}"  method="POST" class="search-form"> {% csrf_token %}
+                <input type="search" name="query" id="" class="search-box" placeholder="Search Your Notes, Books">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="about">
+        <div class="content">
+            <h1>Best Platform To Manage Notes</h1>
+        </div>
+        <div class="content-img">
+            <div class="finding">
+                <h2 class="sub-heading">Find Your Notes</h2>
+                <img src="{% static 'images/a1.png' %}" alt="">
+            </div>
+            <div class="sharing">
+                <h2 class="sub-heading">Share Your Notes With Friends</h2>
+                <img src="{% static 'images/a2.jpg' %}" alt="">
+            </div>
+            <div class="hepling">
+                <h2 class="sub-heading">Help Eachoher</h2>
+                <img src="{% static 'images/a3.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="feedback">
+        <div class="feed-image">
+
+            <img src="{% static 'images/feedback.png' %}" alt="">
+        </div>
+        <div class="feed-form">
+            <div class="feed-heading">
+                <h1>Send Us Your Feedback!</h1>
+                <p>Do you hava any suggestion or found some bug?</p>
+                <p>Let us know in the field below</p>
+            </div>
+            <form action="{% url 'feed' %}" method="POST"> {% csrf_token %}
+                <input type="text" class="feed-input" name="name" placeholder="Your Name">
+                <textarea name="exp" id="exp" class="feed-input" rows="10" placeholder="Describe Your Experience"></textarea>
+                <button type="submit" class="feed-btn">Send Feedback</button>
+            </form>
+        </div>
+    </div>
+    {% endblock body %}
+    {% block footer %}
+    <div class="footer">
+        <div class="info">
+            <div class="explore">
+                <h3>Explore</h3>
+                <ul>
+
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'note' %}">Notes</a></li>
+                    <li><a href="{% url 'signup' %}">Register</a></li>
+                </ul>
+            </div>
+            <div class="follow">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/login/">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li>PhoneNo: <strong>9862722281</strong></li>
+                    <li>Email: <strong>Pokhrelroshan224@gmail.com</strong></li>
+                    <li>Location: <strong>Butwal-8,Rupandehi</strong></li>
+                </ul>
+            </div>
+        </div>
+        <div class="created">
+            &copy; 2021| Created and Designed By <strong>Dev_Ros</strong>
+        </div>
+    </div>
+    {% endblock footer %}
+</body>
+{% for message  in messages %}
+<script>
+    alert("{{message}}")
+</script>
+{% endfor %}
+<script src="{% static 'js/navbar.js' %}"></script>
+    
+
+</html>

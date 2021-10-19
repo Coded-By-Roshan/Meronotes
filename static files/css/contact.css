@@ -1,0 +1,74 @@
+.contact{
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+background: url(https://images.pexels.com/photos/955081/pexels-photo-955081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat;
+background-size: cover;
+}
+.contact .contact-heading{
+    color:white;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.contact-form{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    
+  
+}
+.name{
+    display: flex;
+    width: 52%;
+}
+ .contact-form form{
+     align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.contact-form form button{
+   
+    width: auto;
+    padding: 10px;
+    cursor: pointer;
+    background: cyan;
+    font-size: 20px;
+    outline: none;
+    border-radius: 22px;
+    font-weight: 700;
+}
+.contact-form form button:hover{
+    background: transparent;
+    font-weight: 700;
+    color: cyan;
+}
+input::placeholder, textarea::placeholder{
+    color: black;
+}
+.contact-form form input{
+    background: whitesmoke;
+    border-radius: 15px;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    outline: none;
+    border: 2px solid black;
+    font-size: 25px;
+}
+ .contact-form form textarea{
+    border-radius: 15px;
+    width: 50%;
+    resize: vertical;
+    padding: 10px;
+    margin: 10px;
+    outline: none;
+    border: 2px solid black;
+    font-size: 22px;
+}

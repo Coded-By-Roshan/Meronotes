@@ -1,0 +1,31 @@
+.add-note-page{
+    background: #20B2AA;
+      min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+ }
+ .note-form{
+    display: flex;
+    flex-direction: column;
+ }
+ .login-btn{
+      padding: 15px;
+      font-size: 17px;
+      outline: none;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      background: cyan;
+      margin: 10px;
+      width: 50%;
+  }
+ form input{
+      /* margin: 20px; */
+      padding: 15px;
+      min-width: 250px;
+      outline: none;
+      font-size: 17px;
+      /* width: 50%; */
+  }

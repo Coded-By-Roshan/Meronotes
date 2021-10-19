@@ -1,0 +1,77 @@
+@media only screen and (max-width: 600px) {
+    .content-img{
+        display: flex;
+        flex-direction: column;
+    }
+    .logo{
+        display: none;
+    }
+    .feedback{
+        flex-direction: column;
+    }
+    .feedback .feed-form{
+        width: 90%;
+    }
+    .content-img img{
+        width: 70%;
+    }
+    .content{
+        text-align: center;
+        width: 100%;
+    }
+    .slogan{
+        font-size: 4rem;
+    }
+    .search-box{
+        width: 95%;
+    }
+    .search-form{
+        flex-direction: column;
+    }
+    .search-btn{
+        border: none;
+        margin: 10px 0;
+    }
+   
+  }
+
+  @media only screen and (max-width: 300px){
+      .footer .info{
+          flex-direction: column;
+      }
+  }
+ 
+  @media only screen and (max-width: 650px){
+      .name{
+          flex-direction: column;
+          width: 100%;
+      }
+      
+ 
+  .contact-form form input{
+      width: 90%;
+  }
+  .contact-form form textarea{
+      width: 90%;
+  }
+}
+
+@media only screen and (max-width: 550px){
+   .menus ul{
+       display: none;
+   }
+   .humb{
+    position: absolute;
+    display: flex;
+    right: 25px;
+    top: 20px
+   }
+}
+@media only screen and (max-width: 450px){
+    .view{
+        display: none;
+    }
+    .container{
+        padding: 0;
+    }
+ }

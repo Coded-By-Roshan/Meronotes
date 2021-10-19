@@ -1,0 +1,24 @@
+{% extends 'Home.html' %}
+{% load static %}
+
+
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/notes.css' %}">
+    <div class="notes-container">
+        {% for note in notes %}
+
+        <div class="box">
+            <div class="info">
+                <h2>{{note.title}}</h2>
+                <img class="file-img" src="{% static 'images/Folder-icon.png' %}" alt="">
+            </div>
+            <div class="action">
+               
+                <a href="{% url 'detail' note.pk %}" class="download">View More</a>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+    {% endblock body %}
